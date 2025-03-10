@@ -21,7 +21,7 @@ public class ToDoItem {
         this.description = description;
     }
     // Get the item's state
-    public boolean itemState(){
+    public boolean isDone(){
         return isDone;
     }
     // Set the item's state
