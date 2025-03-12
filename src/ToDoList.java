@@ -109,7 +109,7 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
         // TODO Now: Set the isDone field of the item at the specified index to true
-        // input checking + calling setDone()
+        // input checking + calling setDone(true)
         if (itemNumber > 0 && itemNumber <= user.getToDoItems().size()) {
             user.getToDoItems().get(itemNumber - 1).setDone(true);
             System.out.println("Item completed!");
@@ -127,6 +127,13 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
         // TODO Now: Set the isDone field of the item at the specified index to false
+        // input checking + calling setDone(false)
+        if (itemNumber > 0 && itemNumber <= user.getToDoItems().size()) {
+            user.getToDoItems().get(itemNumber - 1).setDone(false);
+            System.out.println("Item is no longer complete!");
+        } else {
+            System.out.println("Item number invalid.");
+        }
     }
 
     /**
