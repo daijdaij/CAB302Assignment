@@ -92,6 +92,12 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         String description = scanner.nextLine();
         // TODO Now: Call the add(ToDoItem item) method of the user's to-do items list to add a new item
+        // Create new item
+        ToDoItem newItem = new ToDoItem(description);
+        // Add item to the user's Array
+        user.getToDoItems().add(newItem);
+        // Notify user of result
+        System.out.println("New item has been added to list!");
     }
 
     /**
@@ -103,6 +109,13 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
         // TODO Now: Set the isDone field of the item at the specified index to true
+        // input checking + calling setDone()
+        if (itemNumber > 0 && itemNumber <= user.getToDoItems().size()) {
+            user.getToDoItems().get(itemNumber - 1).setDone(true);
+            System.out.println("Item completed!");
+        } else {
+            System.out.println("Item number invalid.");
+        }
     }
 
     /**
