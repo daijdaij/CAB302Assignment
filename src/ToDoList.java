@@ -145,6 +145,13 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
         // TODO Now: Remove the item at the specified index from the user's to-do items list
+        // input checking + delete item
+        if (itemNumber > 0 && itemNumber <= user.getToDoItems().size()) {
+            user.getToDoItems().remove(itemNumber - 1);
+            System.out.println("Item has been deleted!");
+        } else {
+            System.out.println("Item number invalid.");
+        }
     }
 
     /**
